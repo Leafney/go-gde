@@ -2,7 +2,7 @@ FROM alpine:3.8
 MAINTAINER leafney "babycoolzx@126.com"
 
 RUN apk update && \
-    apk add python supervisor tzdata && \
+    apk add python supervisor tzdata ca-certificates && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone && \
     mkdir -p /app && \
