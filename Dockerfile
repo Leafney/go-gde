@@ -1,12 +1,8 @@
-FROM alpine:3.8
-MAINTAINER leafney "babycoolzx@126.com"
+FROM leafney/alpine:3.11
+LABEL maintainer="leafney <babycoolzx@126.com>"
 
-RUN apk update && \
-    apk add python supervisor tzdata ca-certificates && \
-    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-    echo "Asia/Shanghai" > /etc/timezone && \
+RUN apk add --no-cache python supervisor && \
     mkdir -p /app && \
-    rm -rf /var/cache/apk/* && \
     echo "files = /app/conf/*.ini" >> /etc/supervisord.conf
 
 COPY ./app /app

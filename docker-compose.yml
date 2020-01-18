@@ -1,0 +1,11 @@
+# Build image through local dockerfile and run with `docker-compose up`
+# You can use `docker-compose up --build` rebuild when Dockerfile updated
+version: "3.7"
+services:
+  go-gde-demo:
+    build: .
+    image: go-gde-demo:latest
+    ports:
+      - 8080:8080
+    # restart: on-failure:3
+    restart: always
