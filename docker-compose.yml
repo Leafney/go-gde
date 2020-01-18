@@ -4,8 +4,8 @@ version: "3.7"
 services:
   go-gde-demo:
     build:
-        context: .
-        dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile
     image: go-gde-demo:latest
     ports:
       - 8080:8080
